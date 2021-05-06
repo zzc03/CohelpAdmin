@@ -1,0 +1,66 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/web/WEB-INF/lib" />
+      <root url="jar://$PROJECT_DIR$/../commons-beanutils-1.7.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../commons-collections-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../commons-lang-2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../commons-logging.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../ezmorph-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../fastjson-1.2.75.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../json-lib-2.4-jdk15.jar!/" />
+      <root url="file://$PROJECT_DIR$/.." />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../Admin/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../CoHelpTest/.mvn/wrapper" />
+      <root url="file://$PROJECT_DIR$/../CoHelpTest/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../CoHelpTest/src/test/java" />
+      <root url="file://$PROJECT_DIR$/src" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/CoHelpAdmin/src" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/JavaWebTCPBookMangeSystem-master/BookManageSystem/src" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/Lease-master/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/StudentManagement-master/code/src" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hotelbook-JavaWeb-master/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hotelbook-JavaWeb-master/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hr_mana_sys-master/hr_sys/manager_sys/src" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-authorization/hsweb-authorization-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-authorization/hsweb-authorization-api/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-authorization/hsweb-authorization-basic/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-authorization/hsweb-authorization-basic/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-authorization/hsweb-authorization-oauth2/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-authorization/hsweb-authorization-oauth2/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-commons/hsweb-commons-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-commons/hsweb-commons-crud/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-commons/hsweb-commons-crud/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-concurrent/hsweb-concurrent-cache/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-concurrent/hsweb-concurrent-cache/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-core/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-core/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-datasource/hsweb-datasource-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-datasource/hsweb-datasource-api/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-datasource/hsweb-datasource-jta/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-datasource/hsweb-datasource-web/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-logging/hsweb-access-logging-aop/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-logging/hsweb-access-logging-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-starter/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-starter/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-authorization/hsweb-system-authorization-api/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-authorization/hsweb-system-authorization-default/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-authorization/hsweb-system-authorization-default/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-authorization/hsweb-system-authorization-oauth2/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-authorization/hsweb-system-authorization-oauth2/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-dictionary/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-file/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/hsweb-framework-master/hsweb-system/hsweb-system-file/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/java-web-admin-LTE-master/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/mblog-master/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/mblog-master/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/officalWeb-master/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../Graduation-project/studentscore-master/src" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/.." recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/web/WEB-INF/lib" recursive="false" />
+  </library>
+</component>

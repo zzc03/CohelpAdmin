@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:bean="http://www.springframework.org/schema/util" xmlns:beans="http://www.springframework.org/schema/c"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <context:component-scan base-package="serviceimpl" />
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <!--加载驱动类-->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <!--数据库访问地址-->
+        <property name="url" value="jdbc:mysql://localhost:3306/cohelp?serverTimezone=UTC&amp;characterEncoding=UTF-8"/>
+        <!--数据库访问用户名-->
+        <property name="username" value="root"/>
+        <!--数据库访问密码-->
+        <property name="password" value="123456"/>
+    </bean>
+    <!-- spring 提供的数据库事务管理 -->
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <!-- 配置javaBean实体类 -->
+    <bean id="userBean" class="entity.User">
+        <!--属性自动配置 -->
+    </bean>
+    <!--spring提供的数据库访问操作类 -->
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- dao层类 -->
+    <bean id="dao" class="serviceimpl.UserServiceImpl"/>
+    <bean id="needdao" class="serviceimpl.NeedServiceImpl"/>
+<!--    <bean id="userServiceDao" class="serviceimpl.UserServiceImpl">-->
+<!--        <property name="dataSource" ref="dataSource"/>-->
+<!--    </bean>-->
+    <!-- 控制层类 ，这个配置无效-->
+    <bean id="controller" class="controller.UserController">
+        <property name="controller" ref="dao"/>
+    </bean>
+    <bean id="needcontroller" class="controller.NeedController">
+        <property name="needcontroller" ref="dao"/>
+    </bean>
+    <bean id="userMapper" class="mapper.UserMapper"/>
+    <bean id="needMapper" class="mapper.NeedMapper"/>
+</beans>
+
