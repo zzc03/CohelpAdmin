@@ -134,4 +134,23 @@ public class NeedController {
         }
         return "400";
     }
+    @RequestMapping(value="findAllNeed.do",produces="text/html;charset=utf-8")
+    public @ResponseBody String findAllNeed(){
+        System.out.println("进入findallneed");
+        List<NeedPub> list=needServiceImpl.queryAllNeed();
+        String jsonString = JSON.toJSONString(list);
+        //下面这里这个格式是在网上找的
+        int length=list.size();
+        String count=String.valueOf(length);
+        String books="{\"code\":0,\"msg\":\"\",\"count\":"+count+",\"data\":"+jsonString+"}";
+        System.out.println("-----"+books);
+        return books;
+    }
+    @RequestMapping(value = "/hide.do",method = RequestMethod.POST)
+    @ResponseBody
+    public String dojudge(Integer needid,String type) {
+        System.out.println("进入隐藏函数");
+        needServiceImpl.Hide(needid,type);
+        return "400";
+    }
 }

@@ -2,11 +2,8 @@ package controller;
 
 
 import com.alibaba.fastjson.JSON;
-import entity.Constant;
-import entity.Message;
+import entity.*;
 
-import entity.SessionSave;
-import entity.User;
 import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -68,6 +65,18 @@ public class UserController {
             return "400";
         }
     }
+    @RequestMapping(value="findAllUser.do",produces="text/html;charset=utf-8")
+    public @ResponseBody String findAllUser(){
+        System.out.println("进入findalluser");
+        List<UserCustom> needs=userServiceImpl.queryAllUser();
+        String jsonString = JSON.toJSONString(needs);
+        //下面这里这个格式是在网上找的
+        int length=needs.size();
+        String count=String.valueOf(length);
+        String books="{\"code\":0,\"msg\":\"\",\"count\":"+count+",\"data\":"+jsonString+"}";
+        System.out.println("-----"+books);
+        return books;
+    }
     public void writeResponse(Object obj, HttpServletResponse response) {
         try {
             response.setContentType("text/html;charset=utf-8");//设置编码
@@ -103,33 +112,20 @@ public class UserController {
         {
            return "";
         }
-
-
-//        Student student = new Student();
-//
-//        int studentID = Integer.parseInt(request.getParameter("student_id"));
-//        System.out.println("studentID:"+studentID);
-//        String name = request.getParameter("name");
-//        int age = Integer.parseInt(request.getParameter("age"));
-//        String sex = request.getParameter("sex");
-//        Date birthday = null;
-//        // String 类型按照 yyyy-MM-dd 的格式转换为 java.util.Date 类
-//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//        try {
-//            birthday = simpleDateFormat.parse(request.getParameter("birthday"));
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//
-//        student.setStudent_id(studentID);
-//        student.setName(name);
-//        student.setAge(age);
-//        student.setSex(sex);
-//        student.setBirthday(birthday);
-//
-//        studentService.addStudent(student);
-//        return "redirect:listStudent";
     }
     public void setController(UserServiceImpl controller) {
+    }
+    @RequestMapping(value="userban.do",produces="text/html;charset=utf-8")
+    public @ResponseBody String Userban(Integer userid,String type){
+        System.out.println("进入Userban");
+        userServiceImpl.UserBan(userid,type);
+//        List<UserCustom> needs=userServiceImpl.queryAllUser();
+//        String jsonString = JSON.toJSONString(needs);
+//        //下面这里这个格式是在网上找的
+//        int length=needs.size();
+//        String count=String.valueOf(length);
+//        String books="{\"code\":0,\"msg\":\"\",\"count\":"+count+",\"data\":"+jsonString+"}";
+//        System.out.println("-----"+books);
+        return "200";
     }
 }

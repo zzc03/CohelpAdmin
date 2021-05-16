@@ -57,34 +57,23 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">需求管理</a>
+                    <a class="" >需求管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">申请发布的需求</a></dd>
+                        <dd><a href="/needcot.jsp">申请发布需求</a></dd>
+                        <dd><a href="/zhongcai.jsp">用户仲裁申请</a></dd>
+                        <dd><a href="/needbyuserid.jsp">已发布的需求</a></dd>
                         <%--                        <dd><a href="javascript:;">menu item 1-2</a></dd>--%>
                         <%--                        <dd><a href="javascript:;">menu item 1-3</a></dd>--%>
                         <%--                        <dd><a href="">the links</a></dd>--%>
                     </dl>
-                </li>
                 </li>
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" >用户仲裁</a>
+                    <a class="" >用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/zhongcai.jsp">用户的仲裁申请</a></dd>
-                        <%--                        <dd><a href="javascript:;">menu item 1-2</a></dd>--%>
-                        <%--                        <dd><a href="javascript:;">menu item 1-3</a></dd>--%>
-                        <%--                        <dd><a href="">the links</a></dd>--%>
+                        <dd><a href="/user.jsp">用户管理</a></dd>
                     </dl>
                 </li>
-                <%--                <li class="layui-nav-item">--%>
-                <%--                    <a href="javascript:;">menu group 2</a>--%>
-                <%--                    <dl class="layui-nav-child">--%>
-                <%--                        <dd><a href="javascript:;">list 2-1</a></dd>--%>
-                <%--                        <dd><a href="javascript:;">list 2-2</a></dd>--%>
-                <%--                        <dd><a href="">超链接</a></dd>--%>
-                <%--                    </dl>--%>
-                <%--                </li>--%>
-                <%--                <li class="layui-nav-item"><a href="javascript:;">menu item 123</a></li>--%>
-                <%--                <li class="layui-nav-item"><a href="">the links</a></li>--%>
+
             </ul>
         </div>
     </div>
@@ -126,7 +115,6 @@
         <table class="layui-table" lay-data="{width:'full',height:'680',url:'/findAll.do',page:true,id:'demo'}" lay-filter="demo">
             <thead>
             <tr>
-                <th lay-data="{checkbox:true,fixed:true}"></th>
                 <th lay-data="{field:'applyid', width:60, sort: true}">ID</th>
                 <th lay-data="{field:'username', width:100}">申请人</th>
                 <th lay-data="{field:'needtitle', width:100}">题目</th>

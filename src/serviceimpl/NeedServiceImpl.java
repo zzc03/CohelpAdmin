@@ -2,6 +2,7 @@ package serviceimpl;
 
 import entity.ItemJudge;
 import entity.Need;
+import entity.NeedPub;
 import entity.User;
 import mapper.NeedMapper;
 import mapper.UserMapper;
@@ -116,5 +117,39 @@ public class NeedServiceImpl implements NeedService {
             e.printStackTrace();
         }
 
+    }
+    public List<NeedPub> queryAllNeed()
+    {
+        String sql="select * from table_need as a LEFT JOIN table_user as b on a.need_user_id=b.user_id";
+
+        List<NeedPub> needs=new ArrayList<>();
+        try{
+            List<Map<String,Object>> result=jdbcTemplate.queryForList(sql);
+            System.out.println("结果为"+result);
+//            System.out.println("结果为"+user);
+            List<NeedPub> itemJudges=NeedPub.toObject(result);
+            return itemJudges;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public void Hide(Integer needid,String type)
+    {
+        try{
+            if(type.equals("hide"))
+            {
+                String sql="update table_need set need_ismultiple='1' where need_id="+needid;
+                int num=jdbcTemplate.update(sql);
+            }
+            else
+            {
+                String sql="update table_need set need_ismultiple='0' where need_id="+needid;
+                int num=jdbcTemplate.update(sql);
+            }
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }
