@@ -128,4 +128,36 @@ public class UserController {
 //        System.out.println("-----"+books);
         return "200";
     }
+    @RequestMapping(value="findAllRegister.do",produces="text/html;charset=utf-8")
+    public @ResponseBody String findAllRegister(){
+        System.out.println("进入findalluser");
+        List<Register> needs=userServiceImpl.findAllRegister();
+        String jsonString = JSON.toJSONString(needs);
+        //下面这里这个格式是在网上找的
+        int length=needs.size();
+        String count=String.valueOf(length);
+        String books="{\"code\":0,\"msg\":\"\",\"count\":"+count+",\"data\":"+jsonString+"}";
+        System.out.println("-----"+books);
+        return books;
+    }
+    @RequestMapping(value="checkregister.do",produces="text/html;charset=utf-8")
+    public @ResponseBody String CheckRegister(String solveruserid,String name,String stuid){
+        System.out.println("CheckRegister");
+        if(userServiceImpl.CheckRegister(solveruserid, name, stuid))
+        {
+            return "200";
+        }
+        else
+        {
+            return "400";
+        }
+
+    }
+    @RequestMapping(value="judgeregister.do",produces="text/html;charset=utf-8")
+    public @ResponseBody String JudgeRegister(String solveuserid,Integer applyid,String view,String viewtext){
+        System.out.println("JudgeRegister");
+        userServiceImpl.JudgeRegister(solveuserid,applyid,view,viewtext);
+       return "200";
+
+    }
 }

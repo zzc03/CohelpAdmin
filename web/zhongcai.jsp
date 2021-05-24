@@ -59,6 +59,7 @@
                     <a class="" >用户管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/user.jsp">用户管理</a></dd>
+                        <dd><a href="/register.jsp">注册管理</a></dd>
                     </dl>
                 </li>
 

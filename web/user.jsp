@@ -59,6 +59,7 @@
                     <a class="" >用户管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/user.jsp">用户管理</a></dd>
+                        <dd><a href="/register.jsp">注册管理</a></dd>
                     </dl>
                 </li>
 
@@ -75,6 +76,7 @@
                 <th lay-data="{field:'account', width:100}">账号</th>
                 <th lay-data="{field:'password', width:200}">密码</th>
                 <th lay-data="{field:'description', width: 150}">用户信息</th>
+                <th lay-data="{field:'icon', width: 150}">用户头像</th>
                 <th lay-data="{field:'money', width: 80}">用户积分</th>
                 <th lay-data="{field:'isvalid',width: 100,templet:'#needbar'}">状态</th>
                 <%--                <th lay-data="{ width:80,  fixed: 'right', toolbar: '#judgebar'}">处理</th>--%>

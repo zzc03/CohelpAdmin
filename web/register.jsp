@@ -80,61 +80,61 @@
     </div>
 
     <div class="layui-body">
-<%--        <table width="50%",border="0" align="center" cellpadding="5" cellspacing="1" >--%>
-<%--            <tr>--%>
-<%--                <th>ID</th>--%>
-<%--                <th>申请人ID</th>--%>
-<%--                <th>题目</th>--%>
-<%--                <th>正文</th>--%>
-<%--                <th>申请时间</th>--%>
-<%--                <th>申请状态</th>--%>
-<%--                <th>处理人ID</th>--%>
-<%--                <th>申请时间</th>--%>
-<%--                <th>申请意见</th>--%>
-<%--            </tr>--%>
+        <%--        <table width="50%",border="0" align="center" cellpadding="5" cellspacing="1" >--%>
+        <%--            <tr>--%>
+        <%--                <th>ID</th>--%>
+        <%--                <th>申请人ID</th>--%>
+        <%--                <th>题目</th>--%>
+        <%--                <th>正文</th>--%>
+        <%--                <th>申请时间</th>--%>
+        <%--                <th>申请状态</th>--%>
+        <%--                <th>处理人ID</th>--%>
+        <%--                <th>申请时间</th>--%>
+        <%--                <th>申请意见</th>--%>
+        <%--            </tr>--%>
 
-<%--                <c:forEach items='<%=request.getSession().getAttribute("NeedApplyList")%>' var="item" >--%>
+        <%--                <c:forEach items='<%=request.getSession().getAttribute("NeedApplyList")%>' var="item" >--%>
 
-<%--                        <tr>--%>
-<%--                            <td align="center">${item}</td>--%>
-<%--                            <td align="center">${item.applyuserid}</td>--%>
-<%--                            <td align="center">${item.needtitle}</td>--%>
-<%--                            <td align="center">${item.needtext}</td>--%>
-<%--                            <td align="center">${item.needtime}</td>--%>
-<%--                            <td align="center">${item.applystate}</td>--%>
-<%--                            <td align="center">${item.solveuserid}</td>--%>
-<%--                            <td align="center">${item.solvetime}</td>--%>
-<%--                            <td align="center">${item.solveview}</td>--%>
-<%--                        </tr>--%>
+        <%--                        <tr>--%>
+        <%--                            <td align="center">${item}</td>--%>
+        <%--                            <td align="center">${item.applyuserid}</td>--%>
+        <%--                            <td align="center">${item.needtitle}</td>--%>
+        <%--                            <td align="center">${item.needtext}</td>--%>
+        <%--                            <td align="center">${item.needtime}</td>--%>
+        <%--                            <td align="center">${item.applystate}</td>--%>
+        <%--                            <td align="center">${item.solveuserid}</td>--%>
+        <%--                            <td align="center">${item.solvetime}</td>--%>
+        <%--                            <td align="center">${item.solveview}</td>--%>
+        <%--                        </tr>--%>
 
 
-<%--                </c:forEach>--%>
+        <%--                </c:forEach>--%>
 
-<%--        </table>--%>
-    
-<%--        <table id="demo" lay-filter="test" class="layui-table"></table>--%>
-        <table class="layui-table" lay-data="{width:'full',height:'680',url:'/findAll.do',page:true,id:'demo'}" lay-filter="demo">
+        <%--        </table>--%>
+
+        <%--        <table id="demo" lay-filter="test" class="layui-table"></table>--%>
+        <table class="layui-table" lay-data="{width:'full',height:'680',url:'/findAllRegister.do',page:true,id:'demo'}" lay-filter="demo">
             <thead>
             <tr>
                 <th lay-data="{field:'applyid', width:60, sort: true}">ID</th>
-                <th lay-data="{field:'username', width:100}">申请人</th>
-                <th lay-data="{field:'needtitle', width:100}">题目</th>
-                <th lay-data="{field:'needtext', width:200}">正文</th>
-                <th lay-data="{field:'needtime', width: 150}">时间</th>
-                <th lay-data="{field:'needreward', width: 80}">积分</th>
-                <th lay-data="{field:'applystate',width: 100,templet:'#judgebar'}">状态</th>
-                <th lay-data="{field:'applystate',width: 100,}">审核结果</th>
-                <th lay-data="{field:'solveuserid', width: 50}">处理人ID</th>
-                <th lay-data="{field:'solovetime', width: 150}">处理时间</th>
-                <th lay-data="{field:'solveview', width: 100}" >处理意见</th>
-<%--                <th lay-data="{ width:80,  fixed: 'right', toolbar: '#judgebar'}">处理</th>--%>
+                <th lay-data="{field:'account', width:100}">账号</th>
+                <th lay-data="{field:'password', width:100}">密码</th>
+                <th lay-data="{field:'name', width:100}">姓名</th>
+                <th lay-data="{field:'stuid', width: 150}">学号</th>
+                <th lay-data="{field:'state',width: 100,templet:'#judgebar'}">处理</th>
+                <th lay-data="{field:'solverid', width: 80}">处理人ID</th>
+                <th lay-data="{field:'solvetime',width: 100}">处理时间</th>
+                <th lay-data="{field:'solveview',width: 100,}">处理结果</th>
+                <th lay-data="{field:'solvetext', width: 50}">处理意见</th>
+
+                <%--                <th lay-data="{ width:80,  fixed: 'right', toolbar: '#judgebar'}">处理</th>--%>
             </tr>
             </thead>
         </table>
     </div>
     <script type="text/html" id="judgebar">
 
-        {{# if(d.applystate=="申请中"){}}
+        {{# if(d.state=="申请中"){}}
         <a class="layui-btn layui-btn-xs" lay-event="judge">审核</a>
         {{# } else {}}
         <a class="layui-btn layui-btn-xs" >已审核</a>
@@ -184,17 +184,17 @@
 </body>
 </html>
 <script>
-     var getinputvalue=function() {
+    var getinputvalue=function() {
         var viewtext=$('input[name="viewTextName"]').val();
         return viewtext;
 
     }
     var userid=<%=request.getSession().getAttribute("userid")%>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
+        //JavaScript代码区域
+        layui.use('element', function(){
+            var element = layui.element;
 
-    });
+        });
     layui.use(["table","form","laypage","layer"], function(){
         var table = layui.table;
         var form=layui.form;
@@ -204,58 +204,84 @@
         table.on('tool(demo)',function (obj) {
             console.log('进入按钮的点击函数')
             var data=obj.data;
-            var needid=data.applyid;
+            var applyid=data.applyid;
+            var name=data.name;
+            var stuid=data.stuid;
             var layevent=obj.event;
             if(layevent==='judge')
             {
-                console.log('进入审核点击函数'+"applyid为"+needid);
-                layer.open({
-                    type:1,
-                    title:"请选择审核意见",
-                    area:['400px','270px'],
-                    shade:0,
-                    maxmin:0,
-                    // offset:[Math.random()*($(window).height()-300),Math.random()*($(window).width()-390)],
-                    content:$("#test") ,
-                    btn: ['确定', '取消'],
-                    yes:function (index,layero) {
-                        // var viewtext=judgeForm.viewText.value;
-                        // var viewtext=$('viewtextdiv input[name="viewText"]').val();
-                        var input=document.getElementById("viewText");
-                        // var viewtext=document.forms["judgeForm"]["viewTextName"].value
-                        console.log("输入框id为"+input);
-                        var viewtext=input.value;
-                        // var body=layer.getChildFrame('body',index);
-                        // var viewtext=body.find('#viewText').val();
-                        console.log("输入框里的值为"+viewtext);
-                        console.log('意见为'+view+"文字意见为："+viewtext);
-                        $.ajax({
-                            url: '/judge.do'
-                            , type: 'post'
-                            , dataType: 'text'
-                            , data: {"solveuserid":userid,"applyid":needid,"view":view,"viewtext":viewtext},
-                            async:false,
-                            success: function (message) {
-                                console.log("审核成功");
-                                location.href = '/needcot.jsp';
+                console.log('进入审核点击函数'+"applyid为"+applyid);
+                $.ajax({
+                    url: '/checkregister.do'
+                    , type: 'post'
+                    , dataType: 'text'
+                    , data: {"solveuserid":userid,"applyid":applyid,"name":name,"stuid":stuid},
+                    async:false,
+                    success: function (message) {
+                        console.log("审核成功");
+                        if(message==="200")
+                        {
+                            alert("用户信息存在");
+
+                        }
+                        else
+                        {
+                            alert("用户信息不正确或不存在");
+                        }
+                        layer.open({
+                            type:1,
+                            title:"请选择审核意见",
+                            area:['400px','270px'],
+                            shade:0,
+                            maxmin:0,
+                            // offset:[Math.random()*($(window).height()-300),Math.random()*($(window).width()-390)],
+                            content:$("#test") ,
+                            btn: ['确定', '取消'],
+                            yes:function (index,layero) {
+                                var input=document.getElementById("viewText");
+                                console.log("输入框id为"+input);
+                                var viewtext=input.value;
+                                console.log("输入框里的值为"+viewtext);
+                                console.log('意见为'+view+"文字意见为："+viewtext);
+                                console.log("用户id为"+userid);
+                                $.ajax({
+                                    url: '/judgeregister.do'
+                                    , type: 'post'
+                                    , dataType: 'text'
+                                    , data: {"solveuserid":userid,"applyid":applyid,"view":view,"viewtext":viewtext},
+                                    async:false,
+                                    success: function (message) {
+                                        console.log("审核成功");
+                                        location.href = '/register.jsp';
+                                    },
+                                    error: function () {
+                                        console.log("审核失败");
+                                        // location.href = '/index.jsp';
+                                    },
+                                    complete: function () {
+                                        console.log("审核完成");
+                                    }
+                                });
                             },
-                            error: function () {
-                                console.log("审核失败");
-                                // location.href = '/index.jsp';
+                            btn2:function() {
+                                layer.closeAll();
                             },
-                            complete: function () {
-                                console.log("审核完成");
+                            zIndex:layer.zIndex,
+                            success:function (layero) {
+                                layer.setTop(layero);
                             }
-                        });
+                        })
+                        // location.href = '/register.jsp';
                     },
-                    btn2:function() {
-                        layer.closeAll();
+                    error: function () {
+                        console.log("审核失败");
+
                     },
-                    zIndex:layer.zIndex,
-                    success:function (layero) {
-                        layer.setTop(layero);
+                    complete: function () {
+                        console.log("审核完成");
                     }
-                })
+                });
+
                 form.render();
             }
             else
