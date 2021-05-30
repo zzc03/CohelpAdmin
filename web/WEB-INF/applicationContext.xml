@@ -45,6 +45,7 @@
     <!-- dao层类 -->
     <bean id="dao" class="serviceimpl.UserServiceImpl"/>
     <bean id="needdao" class="serviceimpl.NeedServiceImpl"/>
+    <bean id="noticedao" class="serviceimpl.NoticeServiceImpl"/>
 <!--    <bean id="userServiceDao" class="serviceimpl.UserServiceImpl">-->
 <!--        <property name="dataSource" ref="dataSource"/>-->
 <!--    </bean>-->
@@ -54,6 +55,9 @@
     </bean>
     <bean id="needcontroller" class="controller.NeedController">
         <property name="needcontroller" ref="dao"/>
+    </bean>
+    <bean id="noticecontroller" class="controller.NoticeController">
+        <property name="noticecontroller" ref="dao"/>
     </bean>
     <bean id="userMapper" class="mapper.UserMapper"/>
     <bean id="needMapper" class="mapper.NeedMapper"/>

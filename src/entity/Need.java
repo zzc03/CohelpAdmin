@@ -16,6 +16,7 @@ public class Need implements Serializable {
      Integer needreward;
      String applystate;
      Integer solveuserid;
+     String solvename;
      String solovetime;
      String solveview;
 
@@ -57,6 +58,21 @@ public class Need implements Serializable {
         this.needreward = needreward;
         this.applystate = applystate;
         this.solveuserid = solveuserid;
+        this.solovetime = solovetime;
+        this.solveview = solveview;
+    }
+
+    public Need(Integer applyid, Integer applyuserid, String username, String needtitle, String needtext, String needtime, Integer needreward, String applystate, Integer solveuserid, String solvename, String solovetime, String solveview) {
+        this.applyid = applyid;
+        this.applyuserid = applyuserid;
+        this.username = username;
+        this.needtitle = needtitle;
+        this.needtext = needtext;
+        this.needtime = needtime;
+        this.needreward = needreward;
+        this.applystate = applystate;
+        this.solveuserid = solveuserid;
+        this.solvename = solvename;
         this.solovetime = solovetime;
         this.solveview = solveview;
     }
@@ -149,6 +165,14 @@ public class Need implements Serializable {
         this.username = username;
     }
 
+    public String getSolvename() {
+        return solvename;
+    }
+
+    public void setSolvename(String solvename) {
+        this.solvename = solvename;
+    }
+
     @Override
     public String toString() {
         return "Need{" +
@@ -179,6 +203,7 @@ public class Need implements Serializable {
         need.setSolveview((String) map.get("solveview"));
         need.setNeedreward((Integer)map.get("needreward"));
         need.setUsername((String)map.get("user_name"));
+
         return need;
     }
 

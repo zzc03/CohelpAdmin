@@ -86,65 +86,75 @@
     </div>
 
     <div class="layui-body">
-<%--        <table width="50%",border="0" align="center" cellpadding="5" cellspacing="1" >--%>
-<%--            <tr>--%>
-<%--                <th>ID</th>--%>
-<%--                <th>申请人ID</th>--%>
-<%--                <th>题目</th>--%>
-<%--                <th>正文</th>--%>
-<%--                <th>申请时间</th>--%>
-<%--                <th>申请状态</th>--%>
-<%--                <th>处理人ID</th>--%>
-<%--                <th>申请时间</th>--%>
-<%--                <th>申请意见</th>--%>
-<%--            </tr>--%>
+        <%--        <table width="50%",border="0" align="center" cellpadding="5" cellspacing="1" >--%>
+        <%--            <tr>--%>
+        <%--                <th>ID</th>--%>
+        <%--                <th>申请人ID</th>--%>
+        <%--                <th>题目</th>--%>
+        <%--                <th>正文</th>--%>
+        <%--                <th>申请时间</th>--%>
+        <%--                <th>申请状态</th>--%>
+        <%--                <th>处理人ID</th>--%>
+        <%--                <th>申请时间</th>--%>
+        <%--                <th>申请意见</th>--%>
+        <%--            </tr>--%>
 
-<%--                <c:forEach items='<%=request.getSession().getAttribute("NeedApplyList")%>' var="item" >--%>
+        <%--                <c:forEach items='<%=request.getSession().getAttribute("NeedApplyList")%>' var="item" >--%>
 
-<%--                        <tr>--%>
-<%--                            <td align="center">${item}</td>--%>
-<%--                            <td align="center">${item.applyuserid}</td>--%>
-<%--                            <td align="center">${item.needtitle}</td>--%>
-<%--                            <td align="center">${item.needtext}</td>--%>
-<%--                            <td align="center">${item.needtime}</td>--%>
-<%--                            <td align="center">${item.applystate}</td>--%>
-<%--                            <td align="center">${item.solveuserid}</td>--%>
-<%--                            <td align="center">${item.solvetime}</td>--%>
-<%--                            <td align="center">${item.solveview}</td>--%>
-<%--                        </tr>--%>
+        <%--                        <tr>--%>
+        <%--                            <td align="center">${item}</td>--%>
+        <%--                            <td align="center">${item.applyuserid}</td>--%>
+        <%--                            <td align="center">${item.needtitle}</td>--%>
+        <%--                            <td align="center">${item.needtext}</td>--%>
+        <%--                            <td align="center">${item.needtime}</td>--%>
+        <%--                            <td align="center">${item.applystate}</td>--%>
+        <%--                            <td align="center">${item.solveuserid}</td>--%>
+        <%--                            <td align="center">${item.solvetime}</td>--%>
+        <%--                            <td align="center">${item.solveview}</td>--%>
+        <%--                        </tr>--%>
 
 
-<%--                </c:forEach>--%>
+        <%--                </c:forEach>--%>
 
-<%--        </table>--%>
-    
-<%--        <table id="demo" lay-filter="test" class="layui-table"></table>--%>
-        <table class="layui-table" lay-data="{width:'full',height:'680',url:'/findAll.do',page:true,id:'demo'}" lay-filter="demo">
+        <%--        </table>--%>
+
+        <%--        <table id="demo" lay-filter="test" class="layui-table"></table>--%>
+        <table class="layui-table" lay-data="{width:'full',height:'680',url:'/findAllNotice.do',page:true,id:'demo'}" lay-filter="demo">
             <thead>
             <tr>
-                <th lay-data="{field:'applyid', width:60, sort: true}">ID</th>
-                <th lay-data="{field:'username', width:100}">申请人</th>
-                <th lay-data="{field:'needtitle', width:100}">题目</th>
-                <th lay-data="{field:'needtext', width:200}">正文</th>
-                <th lay-data="{field:'needtime', width: 150}">时间</th>
-                <th lay-data="{field:'needreward', width: 80}">积分</th>
-                <th lay-data="{field:'applystate',width: 100,templet:'#judgebar'}">状态</th>
-                <th lay-data="{field:'applystate',width: 100,}">审核结果</th>
-                <th lay-data="{field:'solveuserid', width: 50}">处理人ID</th>
-                <th lay-data="{field:'solovetime', width: 150}">处理时间</th>
-                <th lay-data="{field:'solveview', width: 100}" >处理意见</th>
-<%--                <th lay-data="{ width:80,  fixed: 'right', toolbar: '#judgebar'}">处理</th>--%>
+                <th lay-data="{field:'id', width:60, sort: true}">ID</th>
+                <th lay-data="{field:'sendname', width:100}">发送人</th>
+                <th lay-data="{field:'text', width:200}">正文</th>
+                <th lay-data="{field:'time', width: 250}">时间</th>
+                <th lay-data="{field:'isread', width:100,templet:'#noticebar'}">状态</th>
+                <th lay-data="{width:200,templet:'#checkbar'}"></th>
+<%--                <th lay-data="{field:'needreward', width: 80}">积分</th>--%>
+<%--                <th lay-data="{field:'applystate',width: 100,templet:'#judgebar'}">状态</th>--%>
+<%--                <th lay-data="{field:'applystate',width: 100,}">审核结果</th>--%>
+<%--                <th lay-data="{field:'solveuserid', width: 50}">处理人ID</th>--%>
+<%--                <th lay-data="{field:'solovetime', width: 150}">处理时间</th>--%>
+<%--                <th lay-data="{field:'solveview', width: 100}" >处理意见</th>--%>
+                <%--                <th lay-data="{ width:80,  fixed: 'right', toolbar: '#judgebar'}">处理</th>--%>
             </tr>
             </thead>
         </table>
     </div>
-    <script type="text/html" id="judgebar">
+    <script type="text/html" id="noticebar">
 
-        {{# if(d.applystate=="申请中"){}}
-        <a class="layui-btn layui-btn-xs" lay-event="judge">审核</a>
+        {{# if(d.isread==0){}}
+        <a >未读</a>
         {{# } else {}}
-        <a class="layui-btn layui-btn-xs" >已审核</a>
+        <a >已读</a>
         {{#  }}}
+
+    </script>
+    <script type="text/html" id="checkbar">
+
+
+        <a class="layui-btn layui-btn-xs" lay-event="check">查看</a>
+
+        <a class="layui-btn layui-btn-xs" lay-event="reply">回复</a>
+
 
     </script>
     <div class="layui-footer">
@@ -167,15 +177,8 @@
     <div class="layui-col-md10">
         <form class="layui-form" id="judgeForm" name="judgeForm" action="">
 
-            <div class="layui-form-item">
-                <label class="layui-form-label">审核意见：</label>
-                <div class="layui-input-block">
-                    <input type="radio" name="view" lay-filter="view" value="通过" title="通过" checked >
-                    <input type="radio" name="view" lay-filter="view" value="不通过" title="不通过">
-                </div>
-            </div>
             <div class="layui-form-item" id="hidediv" lay-filter="hidediv">
-                <label class="layui-form-label">意见：</label>
+                <label class="layui-form-label">回复：</label>
                 <div class="layui-input-block" id="viewtextdiv">
                     <input type="text" id="viewText" name="viewTextName">
                 </div>
@@ -184,40 +187,79 @@
     </div>
 </div>
 
+
 <script src="./layui/layui.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 </body>
 </html>
 <script>
-     var getinputvalue=function() {
-        var viewtext=$('input[name="viewTextName"]').val();
-        return viewtext;
 
-    }
     var userid=<%=request.getSession().getAttribute("userid")%>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
+        //JavaScript代码区域
+        layui.use('element', function(){
+            var element = layui.element;
 
-    });
+        });
     layui.use(["table","form","laypage","layer"], function(){
         var table = layui.table;
         var form=layui.form;
         var laypage=layui.laypage;
         var layer=layui.layer;
-        var view="通过";
+
         table.on('tool(demo)',function (obj) {
             console.log('进入按钮的点击函数')
             var data=obj.data;
-            var needid=data.applyid;
+            var needid=data.id;
+            var name=data.sendname;
+            var text=data.text;
             var layevent=obj.event;
-            if(layevent==='judge')
+            var html="<div style='padding: 15px;'>"+"发送人："+ name + "<br><br>"+text +"</div>";
+            if(layevent==='check')
             {
-                console.log('进入审核点击函数'+"applyid为"+needid);
+                console.log('进入查看函数'+"applyid为"+needid);
                 layer.open({
                     type:1,
-                    title:"请选择审核意见",
+                    title:"查看消息",
+                    area:['400px','270px'],
+                    shade:0,
+                    maxmin:0,
+                    content:html ,
+                    btn: ['确定'],
+                    yes:function (index,layero) {
+                        $.ajax({
+                            url: '/checknotice.do'
+                            , type: 'post'
+                            , dataType: 'text'
+                            , data: {"id":needid},
+                            async:false,
+                            success: function (message) {
+                                console.log("审核成功");
+                                location.href = '/notice.jsp';
+                            },
+                            error: function () {
+                                console.log("审核失败");
+                                // location.href = '/index.jsp';
+                            },
+                            complete: function () {
+                                console.log("审核完成");
+                            }
+                        });
+                    },
+
+                    zIndex:layer.zIndex,
+                    success:function (layero) {
+                        layer.setTop(layero);
+                    }
+                })
+                form.render();
+            }
+            else if(layevent==='reply')
+            {
+                console.log('进入回复点击函数'+"applyid为"+needid);
+                layer.open({
+                    type:1,
+                    title:"请填写回复信息",
                     area:['400px','270px'],
                     shade:0,
                     maxmin:0,
@@ -234,16 +276,16 @@
                         // var body=layer.getChildFrame('body',index);
                         // var viewtext=body.find('#viewText').val();
                         console.log("输入框里的值为"+viewtext);
-                        console.log('意见为'+view+"文字意见为："+viewtext);
+
                         $.ajax({
-                            url: '/judge.do'
+                            url: '/replynotice.do'
                             , type: 'post'
                             , dataType: 'text'
-                            , data: {"solveuserid":userid,"applyid":needid,"view":view,"viewtext":viewtext},
+                            , data: {"adminid":userid,"messageid":needid,"text":viewtext},
                             async:false,
                             success: function (message) {
                                 console.log("审核成功");
-                                location.href = '/needcot.jsp';
+                                location.href = '/notice.jsp';
                             },
                             error: function () {
                                 console.log("审核失败");
@@ -266,7 +308,7 @@
             }
             else
             {
-                console.log('进入审核点击函数失败进入了'+layevent);
+                console.log('进入点击函数失败进入了'+layevent);
             }
         });
         form.on('radio(view)',function (data) {

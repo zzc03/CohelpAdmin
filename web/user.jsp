@@ -62,7 +62,13 @@
                         <dd><a href="/register.jsp">注册管理</a></dd>
                     </dl>
                 </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" >消息通知</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/notice.jsp">消息</a></dd>
 
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>
@@ -76,9 +82,10 @@
                 <th lay-data="{field:'account', width:100}">账号</th>
                 <th lay-data="{field:'password', width:200}">密码</th>
                 <th lay-data="{field:'description', width: 150}">用户信息</th>
-                <th lay-data="{field:'icon', width: 150}">用户头像</th>
-                <th lay-data="{field:'money', width: 80}">用户积分</th>
+<%--                <th lay-data="{field:'icon', width: 150}">用户头像</th>--%>
+                <th lay-data="{field:'money', width: 150}">用户积分</th>
                 <th lay-data="{field:'isvalid',width: 100,templet:'#needbar'}">状态</th>
+                <th lay-data="{width:100,templet:'#checkbar'}"></th>
                 <%--                <th lay-data="{ width:80,  fixed: 'right', toolbar: '#judgebar'}">处理</th>--%>
             </tr>
             </thead>
@@ -93,6 +100,23 @@
         {{#  }}}
 
     </script>
+    <script type="text/html" id="checkbar">
+        <a class="layui-btn layui-btn-xs" lay-event="sendnotice">通知</a>
+    </script>
+    <div class="layui-row" id="test" style="display: none;">
+        <div class="layui-col-md10">
+            <form class="layui-form" id="judgeForm" name="judgeForm" action="">
+
+
+                <div class="layui-form-item" id="hidediv" lay-filter="hidediv">
+                    <label class="layui-form-label">通知：</label>
+                    <div class="layui-input-block" id="viewtextdiv">
+                        <input type="text" id="viewText" name="viewTextName">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="layui-footer">
         <!-- 底部固定区域 -->
         同学帮管理系统
@@ -113,6 +137,7 @@
         var element = layui.element;
 
     });
+    var adminid=<%=request.getSession().getAttribute("userid")%>
     layui.use(["table","layer"], function(){
         var table = layui.table;
 
@@ -202,6 +227,58 @@
                         layer.setTop(layero);
                     }
                 })
+            }
+            else if(layevent==='sendnotice')
+            {
+                console.log('进入通知发送函数'+"userid为"+userid);
+                layer.open({
+                    type:1,
+                    title:"发送通知",
+                    area:['400px','100px'],
+                    shade:0,
+                    maxmin:0,
+                    // offset:[Math.random()*($(window).height()-300),Math.random()*($(window).width()-390)],
+                    content:$("#test") ,
+                    btn: ['确定', '取消'],
+                    yes:function (index,layero) {
+                        // var viewtext=judgeForm.viewText.value;
+                        // var viewtext=$('viewtextdiv input[name="viewText"]').val();
+                        var input=document.getElementById("viewText");
+                        // var viewtext=document.forms["judgeForm"]["viewTextName"].value
+                        console.log("输入框id为"+input);
+                        var viewtext=input.value;
+                        // var body=layer.getChildFrame('body',index);
+                        // var viewtext=body.find('#viewText').val();
+                        console.log("输入框里的值为"+viewtext);
+
+                        $.ajax({
+                            url: '/sendnotice.do'
+                            , type: 'post'
+                            , dataType: 'text'
+                            , data: {"userid":userid,"adminid":adminid,"text":viewtext},
+                            async:false,
+                            success: function (message) {
+                                console.log("审核成功");
+                                location.href = '/user.jsp';
+                            },
+                            error: function () {
+                                console.log("审核失败");
+                                // location.href = '/index.jsp';
+                            },
+                            complete: function () {
+                                console.log("审核完成");
+                            }
+                        });
+                    },
+                    btn2:function() {
+                        layer.closeAll();
+                    },
+                    zIndex:layer.zIndex,
+                    success:function (layero) {
+                        layer.setTop(layero);
+                    }
+                })
+                form.render();
             }
         });
 

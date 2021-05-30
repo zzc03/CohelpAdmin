@@ -62,7 +62,13 @@
                         <dd><a href="/register.jsp">注册管理</a></dd>
                     </dl>
                 </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" >消息通知</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="/notice.jsp">消息</a></dd>
 
+                    </dl>
+                </li>
             </ul>
         </div>
     </div>
