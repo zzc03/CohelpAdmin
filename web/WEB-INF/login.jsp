@@ -13,9 +13,9 @@
 </head>
 <body>
 <div class="layadmin-user-login layadmin-user-display-show">
-    <!--登录主体-->
+
     <div class="layadmin-user-login-main">
-        <!--标题-->
+
         <div class="header">
             <h1>同学帮</h1>
             <h2>登录管理同学帮</h2>
@@ -37,49 +37,6 @@
                    </div>
                </div>
 
-
-<%--                    <div class="layui-form-mid layui-word-aux">辅助文字</div>--%>
-
-<%--                <div class="layui-form-item">--%>
-<%--                    <label class="layui-form-label">选择框</label>--%>
-<%--                    <div class="layui-input-block">--%>
-<%--                        <select name="city" lay-verify="required">--%>
-<%--                            <option value=""></option>--%>
-<%--                            <option value="0">北京</option>--%>
-<%--                            <option value="1">上海</option>--%>
-<%--                            <option value="2">广州</option>--%>
-<%--                            <option value="3">深圳</option>--%>
-<%--                            <option value="4">杭州</option>--%>
-<%--                        </select>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="layui-form-item">--%>
-<%--                    <label class="layui-form-label">复选框</label>--%>
-<%--                    <div class="layui-input-block">--%>
-<%--                        <input type="checkbox" name="like[write]" title="写作">--%>
-<%--                        <input type="checkbox" name="like[read]" title="阅读" checked>--%>
-<%--                        <input type="checkbox" name="like[dai]" title="发呆">--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="layui-form-item">--%>
-<%--                    <label class="layui-form-label">开关</label>--%>
-<%--                    <div class="layui-input-block">--%>
-<%--                        <input type="checkbox" name="switch" lay-skin="switch">--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="layui-form-item">--%>
-<%--                    <label class="layui-form-label">单选框</label>--%>
-<%--                    <div class="layui-input-block">--%>
-<%--                        <input type="radio" name="sex" value="男" title="男">--%>
-<%--                        <input type="radio" name="sex" value="女" title="女" checked>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="layui-form-item layui-form-text">--%>
-<%--                    <label class="layui-form-label">文本域</label>--%>
-<%--                    <div class="layui-input-block">--%>
-<%--                        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
                 <div class="btns">
                     <div class="layui-input-block">
                         <button id="adminloginbutid" class="layui-btn" type="button" onclick="submitForm()">登录</button>
@@ -93,19 +50,13 @@
     <!--页脚-->
     <div class="footer">
         <p>© 2021 <a target="_blank">同学帮</a></p>
-<%--        <p>--%>
-<%--            <span><a href="https://github.com/wowpH/Lease" target="_blank">GitHub</a></span>--%>
-<%--            <span><a href="https://blog.csdn.net/pfdvnah" target="_blank">CSDN</a></span>--%>
-<%--            <span><a href="https://www.layui.com" target="_blank">Layui</a></span>--%>
-<%--            <span><a href="https://www.layui.com/admin/pro" target="_blank">LayuiAdmin</a></span>--%>
-<%--        </p>--%>
+
     </div>
 </div>
 
 <!--layui框架的基础核心库-->
 <script src="../layui/layui.js"></script>
-<!--lease项目自定义的登录js文件-->
-<%--<script src="${APP_PATH}/lease/js/login.js"></script>--%>
+
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 </html>
@@ -173,20 +124,14 @@ function submitForm() {
         margin-top: 100px;
     }
     .logintable{
-        /*margin:0 auto;*/
-        /*text-align:center;*/
+
         margin-top: 100px;
 
 
     }
     .label{
         margin:0 auto;width:330px;
-        /*margin-left:'50%';*/
-        /*margin-right: auto;*/
-        /*text-align: center;*/
-        /*float:left;*/
-        /*position:relative;*/
-        /*left:50%;*/
+
     }
 
 </style>
